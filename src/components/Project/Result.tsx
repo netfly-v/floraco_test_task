@@ -14,7 +14,7 @@ import {
 } from './styles';
 
 export const Result: React.FC = () => {
-  const [values] = useContext(ProjectContext);
+  const {values} = useContext(ProjectContext);
   const navigate = useNavigate();
   return (
     <ResultContainer>

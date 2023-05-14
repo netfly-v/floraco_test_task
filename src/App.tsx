@@ -6,15 +6,16 @@ import {AppLayout} from './components/Layout';
 import {BrowserRouter} from 'react-router-dom';
 import {AppRouter} from './Router';
 import {initialProjectData} from './constants/common';
+import {IProjectContext} from './constants/types';
 
-export const ProjectContext = createContext<any | undefined>(undefined);
+export const ProjectContext = createContext({} as IProjectContext);
 const App: React.FC = () => {
   const [values, setValues] = useState(initialProjectData);
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <ProjectContext.Provider value={[values, setValues]}>
+        <ProjectContext.Provider value={{values, setValues}}>
           <AppLayout>
             <AppRouter />
           </AppLayout>

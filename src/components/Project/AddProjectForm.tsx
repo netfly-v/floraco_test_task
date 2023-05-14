@@ -39,7 +39,7 @@ const radioVariantsLast = ['Pre Product', 'Post Product'];
 
 export const AddProjectForm: React.FC = () => {
   const [step, setStep] = useState(0);
-  const [values, setValues] = useContext(ProjectContext);
+  const {values, setValues} = useContext(ProjectContext);
   const navigate = useNavigate();
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
